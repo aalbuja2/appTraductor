@@ -1,5 +1,6 @@
 # Aplicacion de Traductor
 
+### Arquitectura
 La aplicación para la traduccion de un cadena de texto al idioma ingles /español se lo ha realizado de la siguiente manera
 
 1) Base de datos en MySQL de modo que almanece las cadenas de textos traducidas. Para esto crear un esquema de base de datos {bdtraductor}
@@ -20,3 +21,11 @@ CREATE TABLE `historial_traductor` (
 3)Se realizo una API que esta integrada en el web service para la configuracion de Google Cloud Translate y los metodos para su traducción.
  
 4)Se realizo una aplicación web para el usuario en donde le permitira traducir y listar las cadenas.
+
+### Proceso de Clonacion 
+
+1) Descargar el repositorio completo
+2) Realizar un eschema de base de datos llamado **dbTraductor** se adjunto el bloque de creación de la tabla utilizada
+3) En el archivo de configuración del Proyecto WSTraductor si es requerido actualizar el archivo de configuración de hibernate con el puesto de la base de datos , credenciales y nombre de la base de datos. 
+4) En el archivo **Global** del Proyecto **Cliente Traductor** la varible global para el nombre del dominio en donde se encuentra deployado el WSTraductor actualizar con el puerto que corresponda para poder consumirlo.
+
