@@ -1,4 +1,4 @@
-# appTraduccion
+# Aplicacion de Traductor
 
 La aplicación para la traduccion de un cadena de texto al idioma ingles /español se lo ha realizado de la siguiente manera
 
