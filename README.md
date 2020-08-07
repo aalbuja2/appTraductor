@@ -22,7 +22,7 @@ CREATE TABLE `historial_traductor` (
  
 4)Se realizo una aplicación web para el usuario en donde le permitira traducir y listar las cadenas.
 
-### Proceso de Clonacion 
+### Proceso de Clonación 
 
 1) Descargar el repositorio completo
 2) Realizar un eschema de base de datos llamado **dbTraductor** se adjunto el bloque de creación de la tabla utilizada
