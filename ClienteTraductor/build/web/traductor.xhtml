@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="page-wrapper" style="margin-left: 15%; margin-right:  15%;">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-header titulo">Traductor</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h:form id="form-principal" prependId="false">
+                                    <p:remoteCommand name="traducir" actionListener="#{vistaTraductorBean.traducirFrase()}" process="@this"/>
+                                    <p:remoteCommand name="mostrar" actionListener="#{vistaTraductorBean.visualizarHistorial()}" process="@this"/>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="col-sm-6">
+                                                <textarea id="texto" style="width: 100%"></textarea>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <textarea id="traduccion" style="width: 100%"></textarea>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a id="btn-traducir" class="btn btn-primary" onclick=" traducir();"> Traducir</a>
+                                                <a id="btn-ver" class="btn btn-primary" onclick="  mostrar();"> Mostrar Historial</a>
+                                            </div>
+                                            <div jsf:id="contenedor" id="contenedor" class="col-sm-12 form-group table-responsive" style="margin-top: 4%">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr class="cabecera">
+                                                                <th class="text-center">MENSAJE</th>
+                                                                <th class="text-center">TRADUCCION</th>
+                                                                <th class="text-center">LENGUAJE</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <ui:repeat value="#{vistaTraductorBean.listaHistorial}" var="l">
+                                                                <tr>
+                                                                    <td>#{l.texto}</td>
+                                                                    <td>#{l.traduccion}</td>
+                                                                    <td>#{l.lenguaje}</td>
+                                                                </tr>
+                                                            </ui:repeat>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
